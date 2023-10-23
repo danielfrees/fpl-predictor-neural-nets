@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 positions = {'gks': 'goalkeepers', 'defs': 'defenders', 'mids': 'midfielders', 'fwds': 'forwards'}
 
@@ -13,8 +14,8 @@ def plot_training(history, filter_count, kernel_size, position):
     plt.ylabel('MSE')
     plt.xlabel('Epoch')
     plt.legend(['train', 'test'], loc='upper left')
-    plt.savefig('TLoss F ' + str(filter_count) + ' KS ' + str(kernel_size) + ' ' + position + '.png')
-    plt.show()
+    plt.savefig(os.path.join('results', 'plots', 'TLoss F ' + str(filter_count) + ' KS ' + str(kernel_size) + ' ' + position + '.png'))
+    #plt.show()
 
 
 def plot_evaluation(arr, position):
@@ -56,9 +57,9 @@ def plot_evaluation(arr, position):
     rects3 = ax.bar(x - 2*(width), size3, width, label='3')
     rects4 = ax.bar(x - 1*(width), size4, width, label='4')
     rects5 = ax.bar(x , size5, width, label='5')
-    rects6 = ax.bar(x + 1*(width), size6, width, label='6')
-    rects7 = ax.bar(x + 2*(width), size7, width, label='7')
-    rects8 = ax.bar(x + 3*(width), size8, width, label='8')
+    #rects6 = ax.bar(x + 1*(width), size6, width, label='6')
+    #rects7 = ax.bar(x + 2*(width), size7, width, label='7')
+    #rects8 = ax.bar(x + 3*(width), size8, width, label='8')
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_ylabel('MSE')
@@ -73,9 +74,9 @@ def plot_evaluation(arr, position):
     ax.bar_label(rects3, padding=2, rotation=90)
     ax.bar_label(rects4, padding=2, rotation=90)
     ax.bar_label(rects5, padding=2, rotation=90)
-    ax.bar_label(rects6, padding=2, rotation=90)
-    ax.bar_label(rects7, padding=2, rotation=90)
-    ax.bar_label(rects8, padding=2, rotation=90)
+    #ax.bar_label(rects6, padding=2, rotation=90)
+    #ax.bar_label(rects7, padding=2, rotation=90)
+    #ax.bar_label(rects8, padding=2, rotation=90)
 
 
     fig.tight_layout()

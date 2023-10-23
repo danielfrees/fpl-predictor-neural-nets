@@ -6,4 +6,4 @@ class Result:
     def __init__(self, fil, ker, mse):
         self.filters = fil
         self.kernel_size = ker
-        self. mse = mse
+        self.mse = mse

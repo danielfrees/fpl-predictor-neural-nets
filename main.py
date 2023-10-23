@@ -7,8 +7,13 @@ import result
 
 def main():
 
+
     position = 'fwds'   # gks, defs, mids, fwds
-    window = 9          # 3, 6, 9
+    window = 6         # 3, 6, 9
+    #positions = ['gks', 'defs', 'mids', 'fwds']
+    #windows = [6,9]
+    #for position in positions:
+        #for window in windows:
 
     train_features, train_labels, test_features, test_labels = data.get_data_sets(position, window)
 
@@ -24,8 +29,7 @@ def main():
 
     for filter_count in number_of_filters:
         for kernel_size in kernel_sizes:
-            print("Beginning processing of network with " +
-                  str(filter_count) + " filters of kernel size " + str(kernel_size))
+            print(f"Beginning processing of network with {str(filter_count)} filters of kernel size {str(kernel_size)}. For position: {position}." )
             model = models.cnn((None, 23), filter_count, kernel_size, position)
             mse, history = learn.train_and_evaluate(model, train_features, train_labels, test_features, test_labels, 100)
             results.append(result.Result(filter_count, kernel_size, mse))

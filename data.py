@@ -7,7 +7,7 @@ def get_data_sets(position, window):
     windows_targets = {3:4, 6:7, 9:10}
     all_features = []
     all_labels = []
-    a_directory = "data\\by_player\\%s" % position
+    a_directory = os.path.join("data", "by_player", position)
 
     for filename in os.listdir(a_directory):
         filepath = os.path.join(a_directory, filename)
