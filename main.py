@@ -8,7 +8,7 @@ import result
 def main():
 
 
-    position = 'fwds'   # gks, defs, mids, fwds
+    position = 'gks'   # gks, defs, mids, fwds
     window = 6         # 3, 6, 9
     #positions = ['gks', 'defs', 'mids', 'fwds']
     #windows = [6,9]
