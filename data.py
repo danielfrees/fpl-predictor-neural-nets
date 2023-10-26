@@ -25,6 +25,12 @@ def get_data_sets(position, window):
         all_features.append(player_gameweeks_features)
         all_labels.append(player_gameweeks_labels)
 
+    print(f"Extracted Dataset Labels --Pos: {position}---:")
+    print(all_labels)
+    print("Length of Extracted Dataset Labels")
+    print(len(all_labels))
+
+
     #Split the data into training and test sets
     train_features = np.array(all_features[:20], dtype=np.float)
     train_labels = np.array(all_labels[:20], dtype=np.float)
